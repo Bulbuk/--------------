@@ -1,0 +1,167 @@
+$main-font: 'Inter', sans-serif;
+$opacity-color: rgba(100, 100, 100, 0.5);
+$hover-color: lightgrey;
+
+@mixin linkStyle($family, $color, $size, $textDec, $weight) {
+    font-family: $family;
+    color: $color;
+    font-size: $size;
+    text-decoration: $textDec;
+    font-weight: $weight;  
+}
+
+body{
+    font-family: $main-font;
+    color: white;
+    margin: 0;
+}
+
+.home-page{
+    margin-top: 0;
+    height: 100vh;
+    background-image: url(../img/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    padding: 20px 20px 0 20px;
+}
+
+.logo{
+    a{
+        @include linkStyle($main-font, white, 20px, none, 900);
+        text-transform: uppercase;
+    }
+}
+
+nav{
+    .menu{
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        margin-right: 100px;
+        li{
+            margin-right: 80px;
+            &:last-child{
+                margin-right: 0px;
+            }
+            a{
+                @include linkStyle($main-font, white, 18px, none, 400);
+                &:hover{
+                    color: $hover-color;
+                }
+            }
+        }
+    }
+}
+.home-page-main{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    margin-top: 100px;
+    h2{
+        text-align: center;
+        font-size: 34px;
+    }
+    h1{
+        text-align: center;
+        font-size: 64px;
+    }
+}
+.footer-places{
+    display: flex;
+    margin: 0 auto;
+    
+    justify-content: space-between;
+    width: 400px;
+}
+.footer-places-item{
+    background: rgba(78, 78, 78, 0.6);
+    border-radius: 15px;
+    padding: 5px;
+    display: flex;
+    img{
+        margin-top: 15px;
+    }
+    .place-desc{
+        height: 60px;
+        a{
+            @include linkStyle($main-font, white, 12px, none, 400);
+            &:hover{
+                color: $hover-color;
+            }
+            margin-top: -15px;
+        }
+        p{
+            margin-bottom: -5px;
+        }
+    }
+}
+.socials{
+    display: grid;
+    grid-template-rows: auto auto auto;
+    row-gap: 20px;
+    justify-content: center;
+}
+.main-title{
+    text-align: center;
+    color: black;
+}
+.activities-items{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 20px;
+    figure{
+        border-radius: 40px;
+        position: relative;
+        :hover{
+            border-radius: 3px;
+            transition: 0.5s;
+            
+        }
+        img{
+            border-radius: 40px;
+           
+        }
+        figcaption{
+            color: white;
+            h4{
+                position: absolute;
+                top: 8px;
+                left: 10px;
+                font-weight: bold;
+            }
+            p{
+                position: absolute;
+                left: 10px;
+                bottom: 10px;
+            }
+        }
+    }
+}
+.main{
+    margin-top: 200px;
+}
+.home-page-footer{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    margin-top: 100px;
+}
+.main-footer-info{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 20px;
+    
+}
+.main-footer{
+    margin: 0 auto;
+    background: lightgrey;
+    width: 95%;
+    color: black;
+    h3{
+        text-align: center;
+    }
+}
